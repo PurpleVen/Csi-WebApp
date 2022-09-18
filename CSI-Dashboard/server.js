@@ -31,11 +31,16 @@ app.use("/jquery",express.static("jquery"));
 app.use("/index.html",express.static("index.html"));
 app.use("/projectscard.html",express.static("projectscard.html"));
 app.use("/memberscard.html",express.static("memberscard.html"));
+app.use("/about.html",express.static("about.html"));
 
 const connection = mysql.createConnection({
-    host: "3.110.215.205",
-    user: "csi",
-    password: "csi",
+    // host: "3.110.215.205",
+    // user: "csi",
+    // password: "csi",
+    // database: "csiApp"
+    host: "localhost",
+    user: "root",
+    password: "",
     database: "csiApp"
 });
 
