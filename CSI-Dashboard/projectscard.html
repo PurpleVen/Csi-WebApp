@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSI Dashboard</title>
+</head>
+<body>
+
+    <style>
+        body {background-color:#6de4ff; margin:175px auto; ;}
+        input {display:none;}
+        label {display:inline-block; padding:15px;}
+        input:checked + label {background-color:#2539eb; color:rgb(255, 210, 11);}
+        .panels-container {display:block;}
+        .panel {display:none; }
+        
+      
+        #tab1:checked ~ .panels-container .panel1,
+        #tab2:checked ~ .panels-container .panel2,
+        #tab3:checked ~ .panels-container .panel3{
+          display: block;
+        } 
+      </style>
+      
+            <table align="center" width="800"cellpadding="0" cellspacing="0" border="0">
+              
+              <tr>
+                <td style="vertical-align: middle; padding: 20px 0 20px 0;">
+      
+                  <input id="tab1" type="radio" name="tabs" checked>
+                  <label for="tab1"><b>CSI Management App</b></label>
+      
+                  <input id="tab2" type="radio" name="tabs">
+                  <label for="tab2"><b>DBIT Management App</b></label>
+      
+                  <input id="tab3" type="radio" name="tabs">
+                  <label for="tab3"><b>Competition Portal</b></label>
+                
+      
+                  <span class="panels-container">
+                    <span class="panel panel1"style="padding:40px; background-color:#fff;">
+                        <b>Key Functionality: </b><br>
+                        This project manages a task catalogue and offers “Efficient Scheduling” for CSI. 
+                        <br><br>
+                        <b> Ultimate goals:</b><br>
+                        The activities that the functional app will be able to perform include proposing events, assigning tasks, maintaining drafts, summarising prior events, activity reports, and recording attendance.
+                        <br><br>
+                        <b>Benefit:</b><br>
+                        This will prove to be potent to avoid commotion.<br><br>
+                        <b>Need:</b><br>
+                        This would make the work of completing tasks more easier as we do not need to go through multiple platforms to access and store data.<br>
+From submitting proposals to getting it reviewed, it’ll be a hassle-free process.<br>
+This will lead to less time investment as higher authorities are just a click away to know about the documentations and ideas of the team.<br>
+This app provides an environment where nobody from the team misses out on anything as all the meeting details are visible to everyone.<br>
+Attendance is made less complicated as each member can mark their roll call through the app which can be verified by the authorities.<br>
+
+                        <br>
+                        <b>Project exclusions:</b><br>
+                        This project is currently available only for the CSI core team members along with the concerned higher authorities.
+                        <br><br>
+                        
+                    </span>
+                    <span class="panel panel2"  style="padding:40px; background-color:#fff;">
+                        A simple, intuitive, and an organized medium for effective communication in DBIT.<br><br>
+                        This app will creating a common platform for DBIT that serves as a central point of communication where an individual can view and keep up with all of the college's updates.<br><br>
+
+                        It will add a filter mechanism to filter out notifications based on category and urgency, with the goal of replacing the legacy method of hierarchical message delivery with direct one-to-many communication.<br><br>
+
+                        <br><b>Key functionality:</b> <br>Personalised push notifications to provide updates efficiently.<br>
+                        <br><b>Objective:</b> <br>
+                        A unified platform for DBIT so that various committees and students may share information effectively.<br>
+                        <br><b>Scope: </b><br>
+                        We intend to have two-way communication between the various committees and the administration, but only one-way communication with the students in order to avoid spam.<br>
+                        <br><b>Need:</b><br>
+                        This app would serve as a hub for information sharing not only between teachers and students, but also between management and committees.<br>
+                        It Would eliminate the need for intermediaries and allow for direct one-to-many information flow, thereby speeding up overall communication.<br>
+                        A common app for students can receive updates on cancelled/rescheduled lectures, the exam cell can share important updates, fees updates, and administration can address students directly whenever necessary.<br>
+                        
+                        Currently there’s no central medium for TPO to share placement and internship related updates effectively.<br>                            
+                        Teachers and student chapters/clubs can publicise events and provide registration information.<br>
+
+                    </span>
+                    <span class="panel panel3"  style="padding:40px; background-color:#fff;">
+                        Creating a common platform for DBIT Students where they can view and keep up with all the events, hackathons and competitions happening in and outside the college as per their domain of interest.<br>
+                        <br><b>Key functionality:</b> <br>Personalised push notifications to provide updates efficiently.<br>
+                        <br><b>Objective:</b> <br>
+                        Web portal will display all competitions, hackathons conducted where user can know if they are open or closed with their registration link.<br>
+                        <br><b>Scope: </b><br>
+                        Filtering and sorting according to user’s domain of interest.<br>
+
+                        Intra college competitions will have direct registration while inter college competitions will redirect user to their given page.<br>
+                        
+                        Web Portal will also consist reports of the competitions.<br>
+                        
+                        Will have poll survey option where administration can see the type of events students are interested in.
+                        <br>
+                        <br><b>Need:</b><br>
+                        Our web portal serves as the single point of access for information for students who want to know more about the upcoming competitions and events as well as keeping up with the updates for the same. <br>
+
+                        At the same time, it solves the common problem faced by students i.e. lack of information about the various events and competitions conducted by the college and the industry. <br>
+                        
+                        A common platform is especially needed in this current scenario to create awareness among students as well as to increase participation.<br>
+                        
+                        Currently there’s no central medium for TPO to share placement and internship related updates effectively.<br>                            Teachers and student chapters/clubs can publicise events and provide registration information.<br>
+                    </span>
+                    
+                  </span>
+      
+                </td>
+              </tr>
+            </table>
+      
+</body>
+</html>
