@@ -7,26 +7,29 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+// const mysqlsession = require('express-mysql-session')(session);
 const router = express.Router();
-
-// app.use(
-//     session({
-//         resave: true,
-//         saveUnitialized: true,
-//         secret: "secret"
-//     })
-// );
-
 const app = express();
+const oneDay = 1000 * 60 * 5;
 
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'ejs');
 app.set('view engine', 'ejs');
 
+app.use(
+    session({
+        resave: true,
+        saveUnitialized: true,
+        secret: "secret",
+        cookie: { maxAge: oneDay }
+    })
+);
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.json({}))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/images",express.static("images"));
@@ -64,8 +67,15 @@ connection.connect(function(error){
 
 
 app.get("/",function(req,res){
+
+    let session = req.session;
+    if (session.userid) {
+      res.redirect("/dashboard");
+    } else {
+        res.sendFile(__dirname + "/pages/samples/login.html");
+    }
     
-    res.sendFile(__dirname + "/pages/samples/login.html");
+    
 });
 
 app.post("/",encoder, function(req,res){
@@ -77,9 +87,17 @@ app.post("/",encoder, function(req,res){
 
     connection.query("select * from profile where id = ? and password = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
+
+            var session = req.session;
+            session.userid = req.body.username;
+
             res.redirect("/dashboard");
+            req.session.isAuth = true;
+            console.log(req.session);
+            console.log(req.session.id);
         } else {
-            res.redirect("/error");
+
+            res.redirect("/");
         }
         res.end();
     })
@@ -91,7 +109,21 @@ app.post("/",encoder, function(req,res){
 // })
 
 app.get("/dashboard",function(req,res, next){
-    res.sendFile(__dirname + "/index.html")
+
+    var session = req.session;
+
+    if (session.userid != null) {
+        res.sendFile(__dirname + "/index.html");
+      } else {
+        res.sendFile(__dirname + "/pages/samples/login.html");
+      }
+})
+
+app.get("/logout",function(req,res, next){
+
+    req.session.destroy();
+    res.redirect("/");
+   
 })
 
 // if credential
@@ -125,37 +157,61 @@ app.get('./views/feedback.html',function(req,res,next){
 
 app.get("/confData", function(request, response){
 
-	response.sendFile(__dirname +'/index.html', {title : 'CSI Student Chapter : Proposals list'});
+    if (session.userid != null) {
+        response.sendFile(__dirname + "/index.html");
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/proposalData", function(request, response){
 
-	response.sendFile(__dirname +'/views/proposal.html', {title : 'CSI Student Chapter : Proposals list'});
+    if (session.userid != null) {
+        response.sendFile(__dirname +'/views/proposal.html');
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/minuteData", function(request, response){
 
-	response.sendFile(__dirname +'/views/minute.html', {title : 'CSI Student Chapter : Minutes list'});
+    if (session.userid != null) {
+        response.sendFile(__dirname +'/views/minute.html');
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/techData", function(request, response){
 
-	response.sendFile(__dirname +'/views/tech.html', {title : 'CSI Student Chapter : Technical Requirements List'});
+    if (session.userid != null) {
+        response.sendFile(__dirname +'/views/tech.html');
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/publicityData", function(request, response){
 
-	response.sendFile(__dirname +'/views/publicity.html', {title : 'CSI Student Chapter : Publicity Requirements List'});
+    if (session.userid != null) {
+        response.sendFile(__dirname +'/views/publicity.html');
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/feedbackData", function(request, response){
 
-	response.sendFile(__dirname +'/views/feedback.html');
+    if (session.userid != null) {
+        response.sendFile(__dirname +'/views/feedback.html');
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
