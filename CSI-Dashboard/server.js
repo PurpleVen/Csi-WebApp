@@ -6,6 +6,16 @@ const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
+const router = express.Router();
+
+// app.use(
+//     session({
+//         resave: true,
+//         saveUnitialized: true,
+//         secret: "secret"
+//     })
+// );
 
 const app = express();
 
@@ -17,6 +27,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/images",express.static("images"));
 app.use("/css",express.static("css"));
@@ -34,7 +45,7 @@ app.use("/memberscard.html",express.static("memberscard.html"));
 app.use("/about.html",express.static("about.html"));
 
 const connection = mysql.createConnection({
-    // host: "3.110.215.205",
+    // host: "65.2.176.143",
     // user: "csi",
     // password: "csi",
     // database: "csiApp"
@@ -53,10 +64,14 @@ connection.connect(function(error){
 
 
 app.get("/",function(req,res){
+    
     res.sendFile(__dirname + "/pages/samples/login.html");
 });
 
 app.post("/",encoder, function(req,res){
+
+    
+
     var username = req.body.username;
     var password = req.body.password;
 
@@ -75,7 +90,7 @@ app.post("/",encoder, function(req,res){
 //     res.sendFile(__dirname +"/dashboard.html")
 // })
 
-app.get("/dashboard",function(req,res){
+app.get("/dashboard",function(req,res, next){
     res.sendFile(__dirname + "/index.html")
 })
 
@@ -104,6 +119,15 @@ app.get('./views/publicity.html',function(req,res,next){
     res.sendFile('publicity');
 });
 
+app.get('./views/feedback.html',function(req,res,next){
+    res.sendFile('feedback');
+});
+
+app.get("/confData", function(request, response){
+
+	response.sendFile(__dirname +'/index.html', {title : 'CSI Student Chapter : Proposals list'});
+
+});
 
 app.get("/proposalData", function(request, response){
 
@@ -128,6 +152,14 @@ app.get("/publicityData", function(request, response){
 	response.sendFile(__dirname +'/views/publicity.html', {title : 'CSI Student Chapter : Publicity Requirements List'});
 
 });
+
+app.get("/feedbackData", function(request, response){
+
+	response.sendFile(__dirname +'/views/feedback.html');
+
+});
+
+
 
 app.get("/fetchall", function(request, response){
 
@@ -210,6 +242,108 @@ app.get("/techall", function(request, response){
 app.get("/publicityall", function(request, response){
 
     connection.query("SELECT * FROM publicity ORDER BY eid DESC",function(error,results,fields){
+        if (results.length > 0) {
+                // console.log(results);
+                    response.json({
+            data:results
+        });
+        } else {
+            response.redirect("/error");
+        }
+        response.end();
+    })
+
+});
+
+app.get("/feedbackall", function(request, response){
+
+    connection.query("SELECT * FROM events ORDER BY eid DESC",function(error,results,fields){
+        if (results.length > 0) {
+                // console.log(results);
+                    response.json({
+            data:results
+        });
+        } else {
+            response.redirect("/error");
+        }
+        response.end();
+    })
+
+});
+
+app.get("/feedbacksingle", function(request, response){
+
+    var id = request.query.id;
+    
+//    console.log("test: "+id);
+   var query = `SELECT * FROM events WHERE eid = "${id}"`;
+    // var query = `UPDATE events 
+    // SET M_agenda = "${first_name}",  
+    // WHERE eid = "${id}"`;
+    
+    connection.query(query, function(error, data){
+
+        response.json(data[0]);
+
+    })
+
+});
+
+app.get("/feedbackupdate", function(request, response){
+
+    var id = request.query.id;
+    var updated_feedback = request.query.updated_feedback;
+    //console.log("test: "+id+"//"+updated_feedback);
+    var query = `UPDATE events 
+    SET M_agenda = "${updated_feedback}"  
+    WHERE eid = "${id}"`;
+    
+    connection.query(query, function(error, data){
+ 
+        response.json(data);
+
+
+    });
+
+});
+
+app.get("/hodstatusapprove", function(request, response){
+
+    var id = request.query.id;
+    // var status = request.query.status;
+//    console.log("test: "+id);
+    var query = `UPDATE events 
+    SET status = 2  
+    WHERE eid = "${id}"`;
+    
+    connection.query(query, function(error, data){
+
+        response.json(data);
+
+    })
+
+});
+
+app.get("/hodstatusreject", function(request, response){
+
+    var id = request.query.id;
+    // var status = request.query.status;
+//    console.log("test: "+id);
+    var query = `UPDATE events 
+    SET status = -1
+    WHERE eid = "${id}"`;
+    
+    connection.query(query, function(error, data){
+
+        response.json(data);
+
+    })
+
+});
+
+app.get("/confirmedall", function(request, response){
+
+    connection.query("SELECT name FROM events where status = 2 ORDER BY eid DESC",function(error,results,fields){
         if (results.length > 0) {
                 // console.log(results);
                     response.json({

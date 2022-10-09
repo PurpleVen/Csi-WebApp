@@ -204,25 +204,7 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
-        
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
-        </div>
-      </div>
+      
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
@@ -385,12 +367,29 @@
           </li>
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4000/proposalData">
-              <i class="mdi mdi-calendar-month"></i>
-              <span class="menu-title">Events Proposal</span>
+            <a class="nav-link" data-bs-toggle="collapse" href="http://localhost:4000/proposalData" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span class="menu-title">Event Proposals</span>
+              <i class="menu-arrow"></i> 
             </a>
           </li>
+
+          <li class="nav-item nav-category">CSI : Feedback</li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/feedbackData">
+              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <span class="menu-title">Event Feedbacks</span>
+            </a>
+          </li>
+
           <li class="nav-item nav-category">CSI : Minutes of meet</li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="http://localhost:4000/minuteData" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Minutes</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/minuteData">
               <i class="menu-icon mdi mdi-clock"></i>
@@ -413,7 +412,7 @@
             </div>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/publicityData"> Publicity </a></li>
+                <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/publicityData"> Publicity</a></li>
               </ul>
             </div>
           </li>
@@ -442,101 +441,360 @@
                         <div class="row flex-grow">
                           <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card col-sm-6">
 
-                            <div class="container">
-                                <!-- <h1 class="mt-4 mb-4 text-center text-primary"><b><%= title %></b></h1> -->
-                    
-                                <span id="message"></span>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col col-sm-9">Publicity Requirements for CSI activities</div>
-                                            
+                            <main>
+
+                                <div class="container">
+                                    <!-- <h1 class="mt-4 mb-4 text-center text-primary"><b>CSI Proposal</b></h1> -->
+                        
+                                    <span id="message"></span>
+                                    <div class="card" style="width: 160%;">
+                                        <div class="card-header" style="border-radius: calc(1.25rem - 1px) calc(1.25rem - 1px) 0 0;">
+                                            <div class="row">
+                                                <div class="col col-sm-9">Event proposals for CSI activities</div>
+                                                
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-bordered" id="tech_data">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Money Collected</th>
-                                                        <th>Money Spent</th>
-                                                        <th>Desk</th>
-                                                        <th>Target</th>
-                                                        <th>Status</th> 
-                                                    </tr>
-                                                </thead>
-                                                <tbody></tbody>
-                                            </table>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped table-bordered" id="proposal_data">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Event Name</th>
+                                                            <th>Theme</th>
+                                                            <th>Agenda</th>
+                                                            <th>Venue</th>
+                                                            <th>Status</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <script src="https://kit.fontawesome.com/cdb8f414fe.js" crossorigin="anonymous"></script>
+                                <script src="js/jquery-3.3.1.min.js"></script>
+                                <!-- <script src="js/popper.min.js"></script> -->
+                                <script src="js/bootstrap.min.js"></script>
+                                <script src="js/dashboard.js"></script>
+                            </body>
+                            
+                        </html>
+                        
+                        <div class="modal" tabindex="-1" id="action_modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form method="get" id="proposal_form">
+                                        <div class="modal-header" id="dynamic_modal_title">
+                                            <h5 class="modal-title"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <!-- <button type="button" class="btn-close approve" data-bs-dismiss="modal" aria-label="Approve"></button>
+                                            <button type="button" class="btn-close reject" data-bs-dismiss="modal" aria-label="Reject"></button> -->
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label class="form-label">Event Name</label>
+                                                <input type="text" name="first_name" id="first_name" class="form-control" readonly/>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Theme</label>
+                                                <input type="text" name="last_name" id="last_name" class="form-control" readonly />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Agenda</label>
+                                                <input type="text" name="gender" id="gender" class="form-control" readonly />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Venue</label>
+                                                <input type="text" name="age" id="age" class="form-control" readonly />
+                                            </div>
+                                            <!--event date-->
+                                            <!-- <div class="mb-3">
+                                                <label class="form-label">Date</label>
+                                                <input type="date" name="date" id="date" class="form-control" readonly />
+                                            </div> -->
+                        
+                                             <!--speaker-->
+                                            <div class="mb-3">
+                                                <label class="form-label">Speaker</label>
+                                                <input type="text" name="speaker" id="speaker" class="form-control" readonly />
+                                            </div>
+                        
+                                            <!--creative budget-->
+                                            <div class="mb-3">
+                                                <label class="form-label">Creative budget</label>
+                                                <input type="text" name="cb" id="cb" class="form-control" readonly />
+                                            </div>
+                        
+                                             <!--publicity budget-->
+                                             <div class="mb-3">
+                                                <label class="form-label">Publicity budget</label>
+                                                <input type="text" name="pb" id="pb" class="form-control" readonly />
+                                            </div>
+                        
+                                            <!--total budget-->
+                                            <!-- <div class="mb-3">
+                                                <label class="form-label">Total budget</label>
+                                                <input type="text" name="tb" id="tb" class="form-control" readonly />
+                                            </div> -->
+                        
+                                            <!--registration fee-->
+                                            <!-- <div class="mb-3">
+                                                <label class="form-label">Registration fee</label>
+                                                <input type="text" name="rf" id="rf" class="form-control" readonly />
+                                            </div> -->
+                        
+                                             <!--prize-->
+                                             <div class="mb-3">
+                                                <label class="form-label">Prize</label>
+                                                <input type="text" name="prize" id="prize" class="form-control" readonly />
+                                            </div>
+                               
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="hidden" name="id" id="id" />
+                                            <input type="hidden" name="action" id="action" value="Add" />
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger eventreject" id="action_button">Reject</button> 
+                                            <button type="submit" class="btn btn-success eventapprove" id="action_button">Approve</button> 
+                        
+                                            <!-- <button type="submit" class="btn btn-success eventapprove" id="action_button">Ok</button>  -->
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </body>
-                    </html>
-                    
-                    <script>
-                    
-                    $(document).ready(function(){
-                    
-                        load_data();
-                    
-                        function load_data()
-                        {
-                            $.ajax({
-                                url:"http://localhost:4000/publicityall",
-                                method:"GET",
-                     //           data:{action:'fetch'},
-                                dataType : "JSON",
-                                success:function(data)
+                        </div>
+                        </main>
+
+                        <script>
+
+                            $(document).ready(function(){
+                            
+                                load_data();
+                            
+                                // function load_data()
+                                // {
+                                //     $.ajax({
+                                //         url:"http://localhost:4000/fetchall",
+                                //         method:"POST",
+                                //         data:{action:'fetch'},
+                                //         dataType : "JSON",
+                                //         success:function(data)
+                                //         {
+                                //             var html = '';
+                            
+                                //             if(data.length > 0)
+                                //             {
+                                //                 for(var count = 0; count < data.length; count++)
+                                //                 {
+                                //                     html += `
+                                //                     <tr>
+                                //                         <td>`+data[count].name+`</td>
+                                //                         <td>`+data[count].theme+`</td>
+                                //                         <td>`+data[count].M_agenda+`</td>
+                                //                         <td>`+data[count].venue+`</td>
+                                //                         <td><button type="button" class="btn btn-warning btn-sm edit" data-id="`+data[count].eid+`">View</button></td>
+                                //                     </tr>
+                                //                     `;
+                                //                 }
+                                //             }
+                            
+                                //             // $('#sample_data tbody').html(html);
+                                //             $('sample_data tbody').html(html);
+                                //             // console.log(html);
+                                //         }
+                                //     });
+                                // }
+                            
+                                function load_data()
                                 {
-                                //    console.log(data);
-                                    var html = '';
-                                    var status_message = '';
-                    
-                                    if(data.data.length > 0)
-                                    {
-                                      //  console.log(data.data.length);
-                                        for(var count = 0; count < data.data.length; count++)
+                                    $.ajax({
+                                        url:"http://localhost:4000/fetchall",
+                                        method:"GET",
+                             //           data:{action:'fetch'},
+                                        dataType : "JSON",
+                                        success:function(data)
                                         {
-                                          
-                                        if(data.data[count].status == 3){
-                                                          status_message="Checked";
+                                           // console.log(data);
+                                            var html = '';
+                                            var status_message = '';
+                            
+                                            if(data.data.length > 0)
+                                            {
+                                              //  console.log(data.data.length);
+                                                for(var count = 0; count < data.data.length; count++)
+                                                {
+
+                                                
+                                                    if(data.data[count].status == 0){
+                                                          status_message="Approval Pending";
+                                                          color_type ='yellow';
+                                                        }
+                                                    else if(data.data[count].status == 1){
+                                                          status_message="Approved by SBC";
+                                                          color_type ="cyan";
+                                                        }
+                                                    else if(data.data[count].status == 2){
+                                                          status_message="Approved by HOD";
                                                           color_type ='chartreuse';
                                                         }
-                                                        else{
-                                                          status_message="Not Checked";
-                                                          color_type = 'yellow';
-                                                        }
-                                            html += `
-                                            <tr>
-                                                <td>`+data.data[count].collected+`</td>
-                                                <td>`+data.data[count].spent+`</td>
-                                                <td>`+data.data[count].desk+`</td>
-                                                <td>`+data.data[count].target+`</td>
-                                                <td style="background-color:`+color_type+`">`+status_message+`</td>
-                                            </tr>
-                                            `;
-                                        }
-                                    }
-                    
-                                    // $('#sample_data tbody').html(html);
-                                    $('tbody').html(html);
-                                   // console.log(html);
+                                                    else if(data.data[count].status == -1){
+                                                        status_message="Rejected";
+                                                        color_type ='red';
+                                                    }     
+                                                    
+                                                    // var blob = new Blob([data.data[count].description],{type:'text/plain'});
+                                                    // //link.href = URL.createObjectURL(blob);
+
+                                                    //  var reader = new FileReader();
+                                                    //  reader.readAsDataURL(blob);
+                                                    
+                                                    // reader.onload = function(){
+                                                    //     alert(reader.result);
+                                                    // }
+                                                    
+                                                    
+                                                    // console.log(data.data[count].description);
+                                                    // let abc = new Uint32Array(data.data[count].description);
+                                                    // console.log(abc);
+                                                 //  var abc = new Blob([data.data[count].description],{ type: 'text/plain' });
+                                                    html += `
+                                                    <tr>
+                                                        
+                                                        <td>`+data.data[count].name+`</td>
+                                                        <td>`+data.data[count].theme+`</td>
+                                                        <td>`+data.data[count].M_agenda+`</td>
+                                                        <td>`+data.data[count].venue+`</td>
+                                                        <td style="background-color:`+color_type+`">`+status_message+`</td>
+                                                        <td><button type="button" class="btn btn-warning btn-sm edit" data-id="`+data.data[count].eid+`">View</button></td>
+                                                    </tr>
+                                                    `;
+                                                }
+                                            }
+                            
+                                            // $('#sample_data tbody').html(html);
+                                            $('tbody').html(html);
+                                           // console.log(html);
+                                        },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                                    console.log("inside AJAX function: Err");
+                                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                                }
+                                    });
+                                }
+                            
+                            
+                            
+                                $(document).on('click', '.edit', function(){
+                            
+                                    var id = $(this).data('id');
+                            
+                            
+                                    $('#dynamic_modal_title').text('Event Proposal');
+                            
+                                    $('#action').val('Edit');
+                            
+                                    // $('#action_button').text('Close');
+                            
+                                    $('#action_modal').modal('show');
+                                    
+                                    $.ajax({
+                                        url:"http://localhost:4000/fetchsingle",
+                                        method:"GET",
+                                        data:{id:id},
+                                        dataType:"JSON",
+                                        success:function(data)
+                                        {
+                                            console.log(data);
+                                            $('#first_name').val(data.name);
+                                            $('#last_name').val(data.theme);
+                                            $('#gender').val(data.M_agenda);
+                                            $('#age').val(data.venue);
+                                            // $('#date').val(data.event_date);
+                                            $('#speaker').val(data.speaker);
+                                            $('#cb').val(data.creative_budget);
+                                            $('#pb').val(data.publicity_budget);
+                                            // $('#tb').val(data.total_budget);
+                                            // $('#rf').val(data.reg_fee_c);
+                                            $('#prize').val(data.prize);
+                                            $('#id').val(data.eid);
+                                        },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                                    console.log("inside AJAX function: Err");
+                                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                                }
+                                        
+                                    });
+                            
+                                });
+
+                            //for status approval
+
+                            $(document).on('click', '.eventapprove', function(){
+                            
+                            var id = $('#id').val();
+                            // var first_name = $('#first_name').val();
+                            
+                            $.ajax({
+                                url:"http://localhost:4000/hodstatusapprove",
+                                method:"GET",
+                                data:{id:id},
+                                dataType:"JSON",
+                                success:function(data)
+                                {
+
+                                  alert("HOD Status Updated Successfully");
+                                    // console.log(data);
+                                    // $('#first_name').val(data.M_agenda);
+                                    // $('#id').val(data.eid);
                                 },
                         error: function(XMLHttpRequest, textStatus, errorThrown) { 
                             console.log("inside AJAX function: Err");
                             alert("Status: " + textStatus); alert("Error: " + errorThrown); 
                         }
+                                
                             });
-                        }
                     
-                    });
-                    
-                    </script>
+                        });
 
+                        //for status rejection
+
+                        $(document).on('click', '.eventreject', function(){
                             
-     
+                            var id = $('#id').val();
+                            // var first_name = $('#first_name').val();
                             
+                            $.ajax({
+                                url:"http://localhost:4000/hodstatusreject",
+                                method:"GET",
+                                data:{id:id},
+                                dataType:"JSON",
+                                success:function(data)
+                                {
+
+                                  alert("HOD Status Updated Successfully");
+                                    // console.log(data);
+                                    // $('#first_name').val(data.M_agenda);
+                                    // $('#id').val(data.eid);
+                                },
+                        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                            console.log("inside AJAX function: Err");
+                            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                        }
+                                
+                            });
+                    
+                        });
+
+                            });
+                            
+                            </script>
+                           
+                          
+                            
+                            
+                
                               </div>
                             </div>
                           </div>

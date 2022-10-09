@@ -191,12 +191,7 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <a href="#">
-          <div id="settings-trigger"><i class="ti-settings"></i></div>
-        </a>
-        
-      </div>
+      
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
@@ -352,7 +347,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4000/dashboard">
+            <a class="nav-link" href="http://localhost:4000/confData">
               <i class="mdi mdi-view-dashboard menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -362,6 +357,13 @@
             <a class="nav-link" href="http://localhost:4000/proposalData">
               <i class="menu-icon mdi mdi-calendar-month"></i>
               <span class="menu-title">Event Proposals</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">CSI : Feedback</li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/feedbackData">
+              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <span class="menu-title">Event Feedbacks</span>
             </a>
           </li>
           <li class="nav-item nav-category">CSI : Minutes of meet</li>
@@ -451,7 +453,7 @@
                             <div class="box">
                                 <div class="body">
                                     <div class="imgContainer">
-                                        <img src="https://scontent.fbom8-1.fna.fbcdn.net/v/t1.6435-9/53565209_1272744752863896_8401036492893323264_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=p6gk4Qj9Hz0AX_E_CKm&_nc_ht=scontent.fbom8-1.fna&oh=00_AT9t7OQ6yrd5a1XdJStHfsbvXk8vS8zLowXPWMWQTRbv4g&oe=634E0310" alt="" style="border-radius: 30px">
+                                        <img src="https://scontent.cdninstagram.com/v/t51.29350-15/278120465_3131221967115685_2944966672155993389_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=LMqhfx2v0esAX-frM3f&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9heDEILeb1OKBualn2Rq1aUqIwKLleFTq2qLRVizZu6g&oe=6323F279" alt="" style="border-radius: 30px">
                                     </div>
                                     <div class="content d-flex flex-column align-items-center justify-content-center">
                                         <div>
@@ -499,57 +501,7 @@
                         </div>
                         </div>
                       </div>
-                      <!-- <div class="col-lg-4 d-flex flex-column">
-                        <div class="row flex-grow">
-                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card bg-primary card-rounded" style="right: -1050px;top: -520px;">
-                              <div class="card-body pb-0" style="background-color: #f4f5f7; position: absolute;top: 560px;right: 1077px;">
-                                <div class="row">
-                                  <div class="col-sm-4">
-                                    
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <div class="status-summary-chart-wrapper pb-4">
-                                      <canvas id="status-summary"></canvas>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> -->
-                          <!-- <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                      <div class="circle-progress-width">
-                                        <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Total Visitors</p>
-                                        <h4 class="mb-0 fw-bold">26.80%</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                      <div class="circle-progress-width">
-                                        <div id="visitperday" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Visits per day</p>
-                                        <h4 class="mb-0 fw-bold">9065</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> -->
-                        <!-- </div>
-                      </div>
-                    </div> -->
+                      
                     <div class="row">
                       <div class="col-lg-8 d-flex flex-column">
                         <div class="row flex-grow">
@@ -684,10 +636,31 @@ function drawChart()
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                       <div class="card-body">
                                         <div class="d-flex align-items-center justify-content-between mb-3">
-                                          <h4 class="card-title card-title-dash">CSI Timeline<hr></h4>
+                                          <h4 class="card-title card-title-dash">Recently Confirmed Events<hr></h4>
+
                                           <p class="mb-0"></p>
                                         </div>
-                                        <ul class="bullet-line-list">
+
+                                        <div class="card-body">
+                                          <div class="table-responsive">
+                                              <table class="table table-striped table-bordered" id="confirmed_data">
+                                                  <thead>
+                                                      <tr>
+                                                          <th class="text-center">Event Name</th>
+                                                          <!-- <th>View</th> -->
+
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody class="text-center"></tbody>
+                                              </table>
+                                          </div>
+                                          <p id="check"></p>
+                                      </div>
+                                    
+
+                                      
+
+                                        <!-- <ul class="bullet-line-list">
                                           <li>
                                             <div class="d-flex justify-content-between">
                                               <div><span class="text-light-green">100 Days Coding Challenge</span>
@@ -734,16 +707,17 @@ function drawChart()
                                               <p>17 March 2022</p>
                                             </div>
                                           </li>
-                                        </ul>
-                                        <div class="list align-items-center pt-3">
+                                        </ul> -->
+                                        <!-- <div class="list align-items-center pt-3">
                                           <div class="wrapper w-100">
                                             <p class="mb-0">
                                               <a href="#" class="fw-bold text-primary">Show all <i class="mdi mdi-arrow-right ms-2"></i></a>
                                             </p>
                                           </div>
                                           
-                                        </div>
+                                        </div> -->
                                       </div>
+                                      
                                     </div>
                                     
                                     <div id="doughnut-chart-legend" class="mt-5 text-center"></div>
@@ -779,7 +753,6 @@ function drawChart()
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-      
       <footer id="sticky-footer" class="flex-shrink-0 py-4" style="
       background-color: #afafaf;
   ">
@@ -789,11 +762,13 @@ function drawChart()
       </footer>
     </div>
     <!-- page-body-wrapper ends -->
-    
   </div>
-  
   <!-- container-scroller -->
+
   
+
+
+
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <script src="https://kit.fontawesome.com/cdb8f414fe.js"></script>
@@ -860,6 +835,56 @@ function drawChart()
     }
     // ]]>
   </script>
+
+<script>
+
+  $(document).ready(function(){
+  
+      load_data();
+  
+      function load_data()
+      {
+          $.ajax({
+              url:"http://localhost:4000/confirmedall",
+              method:"GET", 
+              dataType : "JSON",
+              success:function(data)
+              {
+                console.log(data);
+
+                  var html = '';
+  
+                  if(data.data.length > 0)
+                  {
+                    
+                      for(var count = 0; count < data.data.length; count++)
+                      {
+                          html += `
+                          <tr>
+                              <td>`+data.data[count].name+`</td>
+                              
+
+                          </tr>
+                          `;
+                      }
+                  }
+                  
+  
+                  $('tbody').html(html);
+
+              },
+              error: function(XMLHttpRequest, textStatus, errorThrown) { 
+       
+console.log("confirmedall  inside AJAX function: Err");
+alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+}
+          });
+      }
+  
+  });
+  
+  </script>
+
 </body>
 
 </html>
