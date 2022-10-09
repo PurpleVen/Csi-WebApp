@@ -137,6 +137,7 @@ app.get("/error",function(req,res){
 
 app.get('./views/proposal.html',function(req,res,next){
     res.sendFile('proposal');
+    
    });
 
 app.get('./views/minute.html',function(req,res,next){
@@ -157,61 +158,61 @@ app.get('./views/feedback.html',function(req,res,next){
 
 app.get("/confData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname + "/index.html");
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
 app.get("/proposalData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname +'/views/proposal.html');
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
 app.get("/minuteData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname +'/views/minute.html');
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
 app.get("/techData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname +'/views/tech.html');
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
 app.get("/publicityData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname +'/views/publicity.html');
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
 app.get("/feedbackData", function(request, response){
 
-    if (session.userid != null) {
+    // if (session.userid != null) {
         response.sendFile(__dirname +'/views/feedback.html');
-      } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
-      }
+    //   } else {
+    //     response.sendFile(__dirname + "/pages/samples/login.html");
+    //   }
 
 });
 
