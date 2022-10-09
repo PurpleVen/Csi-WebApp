@@ -368,15 +368,15 @@
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/proposalData">
-              <i class="mdi mdi-calendar-month"></i>
-              <span class="menu-title">Events Proposal</span>
+              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <span class="menu-title">Event Proposals</span>
             </a>
           </li>
 
           <li class="nav-item nav-category">CSI : Feedback</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/feedbackData">
-              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <i class="menu-icon mdi mdi-square-edit-outline"></i>
               <span class="menu-title">Event Feedbacks</span>
             </a>
           </li>
@@ -484,9 +484,9 @@
                               //    console.log(data);
                                   var html = '';
                                   var status_message = '';
-                                  // var qs_message = '';
-                                  // var internet_message = '';
-                                  // var software_message = '';
+                                  var qs_message = '';
+                                  var internet_message = '';
+                                  var software_message = '';
                   
                                   if(data.data.length > 0)
                                   {
@@ -495,20 +495,47 @@
                                       {
 
                                         if(data.data[count].status == 3){
-                                                          status_message="Checked";
-                                                          color_type ='chartreuse';
-                                                        }
-                                                        else{
-                                                          status_message="Not Checked";
-                                                          color_type = 'yellow';
-                                                        }
+                                        status_message="Checked";
+                                        color_type ='chartreuse';
+                                        }
+                                        else{
+                                        status_message="Not Checked";
+                                        color_type = 'yellow';
+                                        }
+
+                                        if(data.data[count].qs_set == 1){
+                                          qs_message="QS Set Required";
+                                          // color_type ='chartreuse';
+                                        }
+                                        else{
+                                          qs_message="QS Set Not Required";
+                                          // color_type = 'yellow';
+                                        }
+
+                                        if(data.data[count].internet == 1){
+                                          internet_message="Internet Required";
+                                          // color_type ='chartreuse';
+                                        }
+                                        else{
+                                          internet_message="Internet Not Required";
+                                          // color_type = 'yellow';
+                                        }
+
+                                        if(data.data[count].software_install == 1){
+                                          software_message="Software Installations Required";
+                                          // color_type ='chartreuse';
+                                        }
+                                        else{
+                                          software_message="Software Installations Not Required";
+                                          // color_type = 'yellow';
+                                        }
             
 
                                           html += `
                                           <tr>
-                                              <td>`+data.data[count].qs_set+`</td>
-                                              <td>`+data.data[count].internet+`</td>
-                                              <td>`+data.data[count].software_install+`</td>
+                                            <td>`+qs_message+`</td>
+                                            <td>`+internet_message+`</td>
+                                            <td>`+software_message+`</td>
                                               <td style="background-color:`+color_type+`">`+status_message+`</td>
                                               <td>`+data.data[count].comment+`</td>
                                           </tr>

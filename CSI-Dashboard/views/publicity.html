@@ -368,15 +368,15 @@
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/proposalData">
-              <i class="mdi mdi-calendar-month"></i>
-              <span class="menu-title">Events Proposal</span>
+              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <span class="menu-title">Event Proposals</span>
             </a>
           </li>
 
           <li class="nav-item nav-category">CSI : Feedback</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/feedbackData">
-              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <i class="menu-icon mdi mdi-square-edit-outline"></i>
               <span class="menu-title">Event Feedbacks</span>
             </a>
           </li>
@@ -449,10 +449,11 @@
                                             <table class="table table-striped table-bordered" id="tech_data">
                                                 <thead>
                                                     <tr>
-                                                        <th>Money Collected</th>
-                                                        <th>Money Spent</th>
+                                                        <th>Money Collected (₹)</th>
+                                                        <th>Money Spent (₹)</th>
                                                         <th>Desk</th>
                                                         <th>Target</th>
+                                                        <th>Comment</th>
                                                         <th>Status</th> 
                                                     </tr>
                                                 </thead>
@@ -504,6 +505,7 @@
                                                 <td>`+data.data[count].spent+`</td>
                                                 <td>`+data.data[count].desk+`</td>
                                                 <td>`+data.data[count].target+`</td>
+                                                <td>`+data.data[count].comment+`</td>
                                                 <td style="background-color:`+color_type+`">`+status_message+`</td>
                                             </tr>
                                             `;

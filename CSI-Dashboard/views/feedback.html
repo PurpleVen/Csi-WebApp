@@ -367,17 +367,16 @@
           </li>
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="http://localhost:4000/proposalData" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-floor-plan"></i>
+            <a class="nav-link" href="http://localhost:4000/proposalData">
+              <i class="menu-icon mdi mdi-calendar-month"></i>
               <span class="menu-title">Event Proposals</span>
-              <i class="menu-arrow"></i> 
             </a>
           </li>
 
           <li class="nav-item nav-category">CSI : Feedback</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/feedbackData">
-              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <i class="menu-icon mdi mdi-square-edit-outline"></i>
               <span class="menu-title">Event Feedbacks</span>
             </a>
           </li>
@@ -574,7 +573,7 @@
                                                  //  var abc = new Blob([data.data[count].description],{ type: 'text/plain' });
                                                     html += `
                                                     <tr>
-                                                      <td>`+data.data[count].eid+`</td>
+                                                      
                                                         <td>`+data.data[count].name+`</td>
                                                         <td>`+data.data[count].theme+`</td>
                                                         <td style="background-color:`+color_type+`">`+status_message+`</td>

@@ -6,327 +6,366 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSI Dashboard</title>
     <link rel="shortcut icon" href="images/csi.png" />
+    <link rel="stylesheet" href="./css/cards.css">
+    <style>
+      table {
+        width:100%;
+        border:2px solid #4f4f4f;
+        border-collapse:collapse;
+        padding:5px;
+      }
+      table th {
+        border:2px solid #4f4f4f;
+        padding:5px;
+        background: #f0f0f0;
+        color: #313030;
+      }
+      table td {
+        border:2px solid #4f4f4f;
+        text-align:center;
+        padding:5px;
+        background: #ffffff;
+        color: #313030;
+      }
+    </style>
 </head>
 <body>
-
-    <style>
-        body {background-color:#6de4ff; margin:175px auto; ;}
-        input {display:none;}
-        label {display:inline-block; padding:15px;}
-        input:checked + label {background-color:#2539eb; color:rgb(255, 210, 11);}
-        .panels-container {display:block;}
-        .panel {display:none; }
-        
-      
-        #tab1:checked ~ .panels-container .panel1,
-        #tab2:checked ~ .panels-container .panel2{
-          display: block;
-        } 
-      </style>
-      
-            <table align="center" width="800"cellpadding="0" cellspacing="0" border="0">
-              
-              <tr>
-                <td style="vertical-align: middle; padding: 20px 0 20px 0;">
-      
-                  <input id="tab1" type="radio" name="tabs" checked>
-                  <label for="tab1"><b>CSI Core</b></label>
-      
-                  <input id="tab2" type="radio" name="tabs">
-                  <label for="tab2"><b>CSI Members</b></label>
-                    
+            <div id="project-container" class="project-container">
+              <div id="tabs" class="tabs-container">
+          
+                  <div class="tabs">
+                      <a id="tab1" data-tab="1" class="tab" style="min-width: fit-content;margin-right: 30px;     background: #6de4ff;
+                      color: black;">CSI Core Team</a>
+                      <a id="tab2" data-tab="2" class="tab" style="min-width: fit-content;margin-right: 210px;     background: #6de4ff;
+                      color: black;">CSI Members</a>
+                  </div>
+          
+                  <div class="content">
+                      <div id="tabcontent1" data-tab="1" class="tabcontent" style="
+                      width: 680px;
+                      background: linear-gradient(100deg, #6de4ff, #f9f0f0);" >
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Branch</th>
+                              <th>Year</th>
+                              <th>Role</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>&nbsp;Vendra Sekar</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Chairperson&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Suhani Desale&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Vice Chairperson&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;Shreyash Patil</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE</td>
+                              <td>Secretary&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;Simar Kaur</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE</td>
+                              <td>Event Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Tushar Padhy&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Event Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;Ravi Pandey</td>
+                              <td>&nbsp;IT&nbsp;</td>
+                              <td>TE&nbsp;</td>
+                              <td>Tech Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>&nbsp;Anushka Engavle</td>
+                              <td>IT&nbsp;</td>
+                              <td>TE&nbsp;</td>
+                              <td>Web-D Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Saanvi Naik&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>PR Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Sherine Sam&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE</td>
+                              <td>PR Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Kevin Geejo&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Creative Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Jasmit Rathod&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Logistics &amp; operations Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Sneha Naphade&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td>Documentation Head&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Om Jannu&nbsp;</td>
+                              <td>&nbsp;IT</td>
+                              <td>TE&nbsp;</td>
+                              <td><span style="font-style: normal; font-weight: 400;">Web-D Head&nbsp;</span>&nbsp;</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                      <div id="tabcontent2" data-tab="2" class="tabcontent" style="
+                      width: 680px; background: linear-gradient(100deg, #6de4ff, #f9f0f0);
+                  ">
+                            <div class="Members-table" style="    height: 450px;
+                            overflow: auto;">
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                    <th>Year</th>
+                                    <th>Membership Plan</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Rohan Gunge&nbsp;</td>
+                                    <td>IT&nbsp;</td>
+                                    <td>SE&nbsp;</td>
+                                    <td>One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Preetesh Chauhan</td>
+                                    <td>IT&nbsp;</td>
+                                    <td>SE&nbsp;</td>
+                                    <td>One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Ashish Varghese</td>
+                                    <td>&nbsp;IT</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td>One year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Anushka Kulkarni</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td>&nbsp;Three year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Narendranath Chakraborty</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Divij Sarkale</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Dhruuv Naik</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Prakhar Sharma&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td>&nbsp;Two year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Ananya Solanki&nbsp;</td>
+                                    <td>COMP&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>Three year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Nadar Anthony Brighton</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Vanessa Jency Suresh Nadar</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>Three year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Shriya Vinay Thakur</td>
+                                    <td>&nbsp;&nbsp;IT&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span><br></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Viola Noronha</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Yashas Khot</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Swaroop Shivaji Bhagwat</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;Three year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Hendry Chettier</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;Three year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Floria Pinto</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Neha Nair</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Sraina Panchangam</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Avon Joshi</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Blythe Gomes</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>&nbsp;One year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Sumit Sandeep Sawant</td>
+                                    <td>&nbsp;&nbsp;IT&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Abhay Singh</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Pradnya Ingulkar</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">SE&nbsp;</span>&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Pratham Junghare</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Terrence Dias</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Lester Fernandes</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Siddesh bhaiyyasaheb patil</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>One year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Prasad Anil Alai</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span><br></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Aditya Gothiwarekar</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>Two year</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Advay Vinod Gujar&nbsp;</td>
+                                    <td>&nbsp;&nbsp;IT</td>
+                                    <td>&nbsp;SE&nbsp;</td>
+                                    <td>Two year&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;Mitali Rananavare</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">&nbsp;IT</span>&nbsp;</td>
+                                    <td>SE&nbsp;</td>
+                                    <td><span style="font-style: normal; font-weight: 400;">One year&nbsp;</span>&nbsp;</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                      </div>
+                      <div id="tabcontent3" data-tab="3" class="tabcontent" style="
+                      width: 680px; background: linear-gradient(100deg, #6de4ff, #f9f0f0);
+                  ">
+                          
+                      </div>
+                  </div>
+          
+              </div>
             
-                  <span class="panels-container">
-                    <span class="panel panel1"style="padding:40px; background-color:#fff;">
-                      <table class="table table-bordered table-hover table-condensed">
-                        <thead><tr><th title="Field #1">Name</th>
-                        <th title="Field #2">Branch</th>
-                        <th title="Field #3">Year</th>
-                        <th title="Field #4">Role</th>
-                        </tr></thead>
-                        <tbody><tr>
-                        <td>Vendra Sekar</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Chairperson</td>
-                        </tr>
-                        <tr>
-                        <td>Suhani Desale</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Vice Chairperson</td>
-                        </tr>
-                        <tr>
-                        <td>Shreyash Patil</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Secretary</td>
-                        </tr>
-                        <tr>
-                        <td>Simar Kaur</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Event Head</td>
-                        </tr>
-                        <tr>
-                        <td>Tushar Padhy</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Event Head</td>
-                        </tr>
-                        <tr>
-                        <td>Ravi Pandey</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Tech Head</td>
-                        </tr>
-                        <tr>
-                        <td>Anushka Engavle</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Web-Dev Head</td>
-                        </tr>
-                        <tr>
-                        <td>Saanvi Naik</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>PR Head</td>
-                        </tr>
-                        <tr>
-                        <td>Sherine Sam</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>PR Head</td>
-                        </tr>
-                        <tr>
-                        <td>Kevin Geejo</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Creative Head</td>
-                        </tr>
-                        <tr>
-                        <td>Jasmit Rathod</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Logistics & Operations Head</td>
-                        </tr>
-                        <tr>
-                        <td>Sneha Naphade</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Documentation Head</td>
-                        </tr>
-                        <tr>
-                        <td>Om Jannu</td>
-                        <td>IT</td>
-                        <td>TE</td>
-                        <td>Web-Dev Head</td>
-                        </tr>
-                      </tbody></table>
-                    </span>
-                    <span class="panel panel2"  style="padding:40px; background-color:#fff;">
-                       <table class="table table-bordered table-hover table-condensed">
-                        <thead><tr><th title="Field #1">Name</th>
-                        <th title="Field #2">Branch</th>
-                        <th title="Field #3">Year</th>
-                        <th title="Field #4">Membership plan</th>
-                        </tr></thead>
-                        <tbody><tr>
-                        <td>Rohan Gunge</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Preetesh Chauhan</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Ashish Varghese</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Anushka Kulkarni</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Three year</td>
-                        </tr>
-                        <tr>
-                        <td>Narendranath Chakraborty</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Divij Sarkale</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Dhruuv Naik</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Prakhar Sharma</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Two year</td>
-                        </tr>
-                        <tr>
-                        <td>Ananya Solanki</td>
-                        <td>COMP</td>
-                        <td>SE</td>
-                        <td>Three year</td>
-                        </tr>
-                        <tr>
-                        <td>Nadar Anthony Brighton stalin</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Vanessa Jency Suresh Nadar</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Three years</td>
-                        </tr>
-                        <tr>
-                        <td>Shriya Vinay Thakur</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Viola Noronha</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Yashas Khot</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Swaroop Shivaji Bhagwat</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Three years</td>
-                        </tr>
-                        <tr>
-                        <td>Hendry Chettier</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Three years</td>
-                        </tr>
-                        <tr>
-                        <td>Floria Pinto</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Neha Nair</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Sraina Panchangam</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Avon Joshi</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Blythe Gomes</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Sumit Sandeep Sawant</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Abhay Singh</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Pradnya Ingulkar</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Pratham Junghare</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Terrence Dias</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Lester Fernandes</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Siddesh bhaiyyasaheb patil</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>Prasad Anil Alai</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>One year</td>
-                        </tr>
-                        <tr>
-                        <td>ADITYA GOTHIWAREKAR</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Two years</td>
-                        </tr>
-                        <tr>
-                        <td>Advay Vinod Gujar</td>
-                        <td>IT</td>
-                        <td>SE</td>
-                        <td>Two years</td>
-                        </tr>
-                        </tbody></table>
-                    </span>
-                </td>
-              </tr>
-            </table>
-      
+              <div class="dark-mode-switch">
+                  <label class="switch-label" for="dark-mode-switch"></label>
+                  <label class="switch">
+                      <input type="checkbox" id="dark-mode-switch">
+                      <!-- <span class="slider round"></span> -->
+                  </label>
+              </div>
+            
+          </div>
+
+      <script src="./js/cards.js"></script>
 </body>
 </html>
-
-
-
-
-

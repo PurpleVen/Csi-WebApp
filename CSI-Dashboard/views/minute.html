@@ -368,15 +368,15 @@
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/proposalData">
-              <i class="mdi mdi-calendar-month"></i>
-              <span class="menu-title">Events Proposal</span>
+              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <span class="menu-title">Event Proposals</span>
             </a>
           </li>
 
           <li class="nav-item nav-category">CSI : Feedback</li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:4000/feedbackData">
-              <i class="menu-icon mdi mdi-calendar-month"></i>
+              <i class="menu-icon mdi mdi-square-edit-outline"></i>
               <span class="menu-title">Event Feedbacks</span>
             </a>
           </li>
@@ -453,7 +453,7 @@
                                                       <th>Time of meet</th>
                                                       <th>Date</th>
                                                       <th>Creator</th>
-                                                      <th>Action</th>
+                                                      <th>Points Discussed</th>
                                                   </tr>
                                               </thead>
                                               <tbody></tbody>
@@ -475,10 +475,10 @@
                                   </div>
                                   <div class="modal-body">
                                       <div class="mb-3">
-                                          <label class="form-label">Minute Agenda</label>
-                                          <input type="text" name="first_name" id="first_name" class="form-control" readonly/>
+                                          <label class="form-label">Minute</label>
+                                          <input style='width:100%' type="text" name="first_name" id="first_name" class="form-control" readonly/>
                                       </div>
-                                      <div class="mb-3">
+                                      <!-- <div class="mb-3">
                                           <label class="form-label">Date</label>
                                           <input type="text" name="last_name" id="last_name" class="form-control" readonly />
                                       </div>
@@ -489,7 +489,7 @@
                                       <div class="mb-3">
                                           <label class="form-label">Creator</label>
                                           <input type="text" name="age" id="age" class="form-control" readonly />
-                                      </div>
+                                      </div> -->
                                   </div>
                   
                                   <div class="modal-footer">
@@ -518,6 +518,8 @@
                   
                       return [day, month, year].join('-');
                   }
+
+                  
                   $(document).ready(function(){
                   
                       load_data();
@@ -545,8 +547,8 @@
                                           html += `
                                           <tr>
                                               <td>`+data.data[count].agenda+`</td>
-                                              <td>`+formatDate(date)+`</td>
                                               <td>`+data.data[count].ti_me+`</td>
+                                              <td>`+formatDate(date)+`</td>
                                               <td>`+data.data[count].creator+`</td>
                                               <td><button type="button" class="btn btn-warning btn-sm edit" data-id="`+data.data[count].id+`">View</button></td>
                                           </tr>
@@ -585,13 +587,14 @@
                               method:"GET",
                               data:{id:id},
                               dataType:"JSON",
+                              
                               success:function(data)
                               {
                                   console.log(data);
-                                  $('#first_name').val(data.agenda);
-                                  $('#last_name').val(data.da_te);
-                                  $('#gender').val(data.ti_me);
-                                  $('#age').val(data.creator);
+                                  $('#first_name').val(data.minute);
+                                  // $('#last_name').val(data.da_te);
+                                  // $('#gender').val(data.ti_me);
+                                  // $('#age').val(data.creator);
                                   $('#id').val(data.id);
                               },
                       error: function(XMLHttpRequest, textStatus, errorThrown) { 
