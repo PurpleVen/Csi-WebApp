@@ -54,9 +54,13 @@ const connection = mysql.createConnection({
     // user: "csi",
     // password: "csi",
     // database: "csiApp"
-    host: "localhost",
-    user: "root",
-    password: "",
+    // host: "localhost",
+    // user: "root",
+    // password: "",
+    // database: "csiApp"
+    host: "3.111.196.206",
+    user: "csi",
+    password: "csi",
     database: "csiApp"
 });
 
