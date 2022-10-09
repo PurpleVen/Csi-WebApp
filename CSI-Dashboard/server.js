@@ -46,6 +46,8 @@ app.use("/index.html",express.static("index.html"));
 app.use("/projectscard.html",express.static("projectscard.html"));
 app.use("/memberscard.html",express.static("memberscard.html"));
 app.use("/about.html",express.static("about.html"));
+app.use("/event.html",express.static("event.html"));
+app.use("/workshop.html",express.static("workshop.html"));
 
 const connection = mysql.createConnection({
     // host: "65.2.176.143",
