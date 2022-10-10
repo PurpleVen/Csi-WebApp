@@ -49,6 +49,8 @@ app.use("/about.html",express.static("about.html"));
 app.use("/event.html",express.static("event.html"));
 app.use("/workshop.html",express.static("workshop.html"));
 
+
+
 const connection = mysql.createConnection({
     // host: "65.2.176.143",
     // user: "csi",
@@ -163,62 +165,62 @@ app.get('./views/feedback.html',function(req,res,next){
 });
 
 app.get("/confData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname + "/index.html");
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/proposalData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname +'/views/proposal.html');
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/minuteData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname +'/views/minute.html');
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/techData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname +'/views/tech.html');
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/publicityData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname +'/views/publicity.html');
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
 app.get("/feedbackData", function(request, response){
-
-    // if (session.userid != null) {
+    var session = request.session;
+    if (session.userid != null) {
         response.sendFile(__dirname +'/views/feedback.html');
-    //   } else {
-    //     response.sendFile(__dirname + "/pages/samples/login.html");
-    //   }
+      } else {
+        response.sendFile(__dirname + "/pages/samples/login.html");
+      }
 
 });
 
