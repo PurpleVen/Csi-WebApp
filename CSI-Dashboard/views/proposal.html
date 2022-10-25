@@ -149,7 +149,7 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
               <a class="dropdown-item py-3">
                 <p class="mb-0 font-weight-medium float-left">3 new proposal </p>
-                <a href="http://localhost:4000/proposalData">
+                <a href="http://65.0.135.240:4000/proposalData">
                   <span class="badge badge-pill badge-primary float-right" style="position: absolute;right: 20px;top: 15px;">View all</span>
                 </a>
               </a>
@@ -367,7 +367,7 @@
           </li>
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4000/proposalData">
+            <a class="nav-link" href="http://65.0.135.240:4000/proposalData">
               <i class="menu-icon mdi mdi-calendar-month"></i>
               <span class="menu-title">Event Proposals</span>
             </a>
@@ -609,7 +609,7 @@
                                 function load_data()
                                 {
                                     $.ajax({
-                                        url:"http://localhost:4000/fetchall",
+                                        url:"http://65.0.135.240:4000/fetchall",
                                         method:"GET",
                              //           data:{action:'fetch'},
                                         dataType : "JSON",
@@ -704,7 +704,7 @@
                                     $('#action_modal').modal('show');
                                     
                                     $.ajax({
-                                        url:"http://localhost:4000/fetchsingle",
+                                        url:"http://65.0.135.240:4000/fetchsingle",
                                         method:"GET",
                                         data:{id:id},
                                         dataType:"JSON",
@@ -741,7 +741,7 @@
                             // var first_name = $('#first_name').val();
                             
                             $.ajax({
-                                url:"http://localhost:4000/hodstatusapprove",
+                                url:"http://65.0.135.240:4000/hodstatusapprove",
                                 method:"GET",
                                 data:{id:id},
                                 dataType:"JSON",
@@ -770,7 +770,7 @@
                             // var first_name = $('#first_name').val();
                             
                             $.ajax({
-                                url:"http://localhost:4000/hodstatusreject",
+                                url:"http://65.0.135.240:4000/hodstatusreject",
                                 method:"GET",
                                 data:{id:id},
                                 dataType:"JSON",
