@@ -32,9 +32,7 @@ app.use(cookieParser());
 app.use(express.json({}))
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/images'));
-
-<!--app.use("/images",express.static("images"));-->
+app.use("/images",express.static("images"));
 app.use("/css",express.static("css"));
 app.use("/scss",express.static("scss"));
 app.use("/pages",express.static("pages"));
@@ -45,11 +43,12 @@ app.use("/partials",express.static("partials"));
 // app.use("/insta.html",express.static("insta.html"));
 app.use("/jquery",express.static("jquery"));
 app.use("/index.html",express.static("index.html"));
+app.use("/event.html",express.static("event.html"));
+app.use("/workshop.html",express.static("workshop.html"));
 app.use("/projectscard.html",express.static("projectscard.html"));
 app.use("/memberscard.html",express.static("memberscard.html"));
 app.use("/about.html",express.static("about.html"));
-app.use("/event.html",express.static("event.html"));
-app.use("/workshop.html",express.static("workshop.html"));
+
 
 
 
@@ -62,7 +61,7 @@ const connection = mysql.createConnection({
     // user: "root",
     // password: "",
     // database: "csiApp"
-    host: "15.207.106.198",
+    host: '15.207.106.198',
     user: "csi",
     password: "csi",
     database: "csiApp"
@@ -152,6 +151,10 @@ app.get('./views/proposal.html',function(req,res,next){
 
 app.get('./views/minute.html',function(req,res,next){
     res.sendFile('minute');
+});
+
+app.get('/event',function(req,res,next){
+    res.sendFile(__dirname + "/event.html")
 });
 
 app.get('./views/tech.html',function(req,res,next){

@@ -149,7 +149,7 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
               <a class="dropdown-item py-3">
                 <p class="mb-0 font-weight-medium float-left">3 new proposal </p>
-                <a href="http://65.0.135.240:4000/proposalData">
+                <a href="http://localhost:4000/proposalData">
                   <span class="badge badge-pill badge-primary float-right" style="position: absolute;right: 20px;top: 15px;">View all</span>
                 </a>
               </a>
@@ -367,7 +367,7 @@
           </li>
           <li class="nav-item nav-category">CSI : Events</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://65.0.135.240:4000/proposalData">
+            <a class="nav-link" href="http://localhost:4000/proposalData">
               <i class="menu-icon mdi mdi-calendar-month"></i>
               <span class="menu-title">Event Proposals</span>
             </a>
@@ -375,7 +375,7 @@
 
           <li class="nav-item nav-category">CSI : Feedback</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://65.0.135.240:4000/feedbackData">
+            <a class="nav-link" href="http://localhost:4000/feedbackData">
               <i class="menu-icon mdi mdi-square-edit-outline"></i>
               <span class="menu-title">Event Feedbacks</span>
             </a>
@@ -383,7 +383,7 @@
 
           <li class="nav-item nav-category">CSI : Minutes of meet</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://65.0.135.240:4000/minuteData">
+            <a class="nav-link" href="http://localhost:4000/minuteData">
               <i class="menu-icon mdi mdi-clock"></i>
               <span class="menu-title">Minutes</span>
             </a>
@@ -399,12 +399,12 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="http://65.0.135.240:4000/techData"> Technical </a></li>
+                <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/techData"> Technical </a></li>
               </ul>
             </div>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="http://65.0.135.240:4000/publicityData"> Publicity </a></li>
+                <li class="nav-item"> <a class="nav-link" href="http://localhost:4000/publicityData"> Publicity </a></li>
               </ul>
             </div>
           </li>
@@ -475,7 +475,7 @@
                       function load_data()
                       {
                           $.ajax({
-                              url:"http://65.0.135.240:4000/techall",
+                              url:"http://localhost:4000/techall",
                               method:"GET",
                    //           data:{action:'fetch'},
                               dataType : "JSON",
