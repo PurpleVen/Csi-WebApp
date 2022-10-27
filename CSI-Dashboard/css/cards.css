@@ -82,7 +82,8 @@
 /* Style the tab content */
 .tabcontent {
     padding: 46px;
-    min-height: 288px;
+    /* min-height: 288px; */
+    height: fit-content;
     display: none;    
     border-radius: 18px;
     background: #f4f4f4;

@@ -32,9 +32,7 @@ app.use(cookieParser());
 app.use(express.json({}))
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/images'));
-
-<!--app.use("/images",express.static("images"));-->
+app.use("/images",express.static("images"));
 app.use("/css",express.static("css"));
 app.use("/scss",express.static("scss"));
 app.use("/pages",express.static("pages"));
