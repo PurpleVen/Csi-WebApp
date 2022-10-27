@@ -7,6 +7,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const port = process.env.PORT || 4000;
 // const mysqlsession = require('express-mysql-session')(session);
 const router = express.Router();
 const app = express();
@@ -423,4 +424,7 @@ app.get("/confirmedall", function(request, response){
 });
 
 // set app port 
-app.listen(4000);
+// app.listen(4000);
+app.listen(port, () => {
+    console.log(`listening to port no ${port}`);
+})
