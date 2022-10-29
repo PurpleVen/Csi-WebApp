@@ -8,15 +8,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const port = process.env.PORT || 4000;
-// const mysqlsession = require('express-mysql-session')(session);
 const router = express.Router();
 const app = express();
 const oneDay = 1000 * 60 * 5;
 
 app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
 app.set('view engine', 'ejs');
 
+//session
 app.use(
     session({
         resave: true,
@@ -33,15 +32,12 @@ app.use(cookieParser());
 app.use(express.json({}))
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//all static files are mentioned here
 app.use("/images",express.static("images"));
+app.use("/views",express.static("views"));
 app.use("/css",express.static("css"));
-app.use("/scss",express.static("scss"));
-app.use("/pages",express.static("pages"));
 app.use("/js",express.static("js"));
 app.use("/vendors",express.static("vendors"));
-app.use("/fonts",express.static("fonts"));
-app.use("/partials",express.static("partials"));
-// app.use("/insta.html",express.static("insta.html"));
 app.use("/jquery",express.static("jquery"));
 app.use("/index.html",express.static("index.html"));
 app.use("/projectscard.html",express.static("projectscard.html"));
@@ -52,11 +48,8 @@ app.use("/workshop.html",express.static("workshop.html"));
 
 
 
+//db connection to cloud aws
 const connection = mysql.createConnection({
-    // host: "65.2.176.143",
-    // user: "csi",
-    // password: "csi",
-    // database: "csiApp"
     // host: "localhost",
     // user: "root",
     // password: "",
@@ -73,39 +66,32 @@ connection.connect(function(error){
     else console.log("connected to the database successfully!")
 });
 
-
-
+//if already logged in, it'll redirect to dashboard(session) or the login page is fetched
 app.get("/",function(req,res){
 
     let session = req.session;
     if (session.userid) {
       res.redirect("/dashboard");
     } else {
-        res.sendFile(__dirname + "/pages/samples/login.html");
+        res.sendFile(__dirname + "/login.html");
     }
     
     
 });
 
+//with post method we are checking the user id and password and session id is printed on console
 app.post("/",encoder, function(req,res){
-
-    
-
     var username = req.body.username;
     var password = req.body.password;
-
     connection.query("select * from profile where id = ? and password = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
-
             var session = req.session;
             session.userid = req.body.username;
-
             res.redirect("/dashboard");
             req.session.isAuth = true;
             console.log(req.session);
             console.log(req.session.id);
         } else {
-
             res.redirect("/");
         }
         res.end();
@@ -113,10 +99,6 @@ app.post("/",encoder, function(req,res){
 })
 
 // when login is success
-// app.get("/dashboard",function(req,res){
-//     res.sendFile(__dirname +"/dashboard.html")
-// })
-
 app.get("/dashboard",function(req,res, next){
 
     var session = req.session;
@@ -124,26 +106,20 @@ app.get("/dashboard",function(req,res, next){
     if (session.userid != null) {
         res.sendFile(__dirname + "/index.html");
       } else {
-        res.sendFile(__dirname + "/pages/samples/login.html");
+        res.sendFile(__dirname + "/login.html");
       }
 })
 
+// logout
 app.get("/logout",function(req,res, next){
 
     req.session.destroy();
     res.redirect("/");
-   
 })
 
-// if credential
-app.get("/error",function(req,res){
-    res.sendFile(__dirname + "/error.html")
-})
+//get method to fetch all files from views folder
 
-// app.get('./views/proposal.ejs',function(req,res,next){
-//     res.render('proposal');
-//    });
-
+//to get proposal page 
 app.get('./views/proposal.html',function(req,res,next){
     res.sendFile('proposal');
     
@@ -165,12 +141,14 @@ app.get('./views/feedback.html',function(req,res,next){
     res.sendFile('feedback');
 });
 
+//get method to fetch url's that are used to fetch data from db (json) to table
+
 app.get("/confData", function(request, response){
     var session = request.session;
     if (session.userid != null) {
         response.sendFile(__dirname + "/index.html");
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -180,7 +158,7 @@ app.get("/proposalData", function(request, response){
     if (session.userid != null) {
         response.sendFile(__dirname +'/views/proposal.html');
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -190,7 +168,7 @@ app.get("/minuteData", function(request, response){
     if (session.userid != null) {
         response.sendFile(__dirname +'/views/minute.html');
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -200,7 +178,7 @@ app.get("/techData", function(request, response){
     if (session.userid != null) {
         response.sendFile(__dirname +'/views/tech.html');
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -210,7 +188,7 @@ app.get("/publicityData", function(request, response){
     if (session.userid != null) {
         response.sendFile(__dirname +'/views/publicity.html');
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -220,7 +198,7 @@ app.get("/feedbackData", function(request, response){
     if (session.userid != null) {
         response.sendFile(__dirname +'/views/feedback.html');
       } else {
-        response.sendFile(__dirname + "/pages/samples/login.html");
+        response.sendFile(__dirname + "/login.html");
       }
 
 });
@@ -424,7 +402,6 @@ app.get("/confirmedall", function(request, response){
 });
 
 // set app port 
-// app.listen(4000);
 app.listen(port, () => {
     console.log(`listening to port no ${port}`);
 })
