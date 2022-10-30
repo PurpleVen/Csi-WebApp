@@ -52,6 +52,8 @@ alt="Foresight" width="40%" align="right">
   <li>This will lead to less time investment as higher authorities are just a click away to know about the documentations and ideas of the team.</li>
 </ul>
 
+---
+
 ## Features 
 
 | Feature | Description |
@@ -61,8 +63,12 @@ alt="Foresight" width="40%" align="right">
 | `Approval & Rejection` | The event proposals fetched from the database can be accepted/rejected which gets reflected and stored in the db |
 | `Feedback` | An Update can be given to the event proposals displayed |
 
+---
+
 ## Project Exclusions:
 This project is currently in the development phase for the core team members of CSI along with the concerned higher authorities.
+
+---
 
 ## Technology Used for:
 Frontend - HTML, CSS & JS
@@ -72,6 +78,8 @@ Backend - NodeJS
 Database - mysql (Stored in cloud AWS)
 <br>
 Deploy - Heroku
+
+---
 
 <!--Put developed by here-->
 
