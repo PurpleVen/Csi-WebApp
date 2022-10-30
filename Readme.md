@@ -1,9 +1,9 @@
 <div align="center">
    <h1>CSI MANAGEMENT WEB APP</h1>
    <p>
-      A dashboard developed for the higher authorities of the IT department student chapter (CSI) in DBIT which displays the information, requirements and overall functioning of the mentioned chapter.<br> An Admin Dashobard for <a href=https://github.com/CSI-DBIT/CSI-ManagementSystem>CSI Management System Mobile App</a>
+      A dashboard developed for the higher authorities of the IT department student chapter (CSI) in DBIT which displays the information, requirements and overall functioning of the mentioned chapter.<br><br> An Admin Dashobard for <a href=https://github.com/CSI-DBIT/CSI-ManagementSystem>CSI Management System Mobile App</a>
    </p>
-   <br>
+   <h3>Built With</h3>
    <p align="center">
    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -43,10 +43,40 @@ alt="Foresight" width="40%" align="right">
 
 ---
 
+## The Need Of This Web-App
+<ul>
+  <li>Currently there is no platform for higher authorities to know about CSI's overall functioning.</li><br>
+  <li>This would make the work of completing tasks more easier as we do not need to go through multiple platforms to access and store data, from submitting proposals to getting it reviewed, it’ll be a hassle-free process.</li><br>
+  <li>This will lead to less time investment as higher authorities are just a click away to know about the documentations and ideas of the team.</li>
+</ul>
 
-## Key Functionality
-This project manages a task catalogue and offers “Efficient Scheduling” for CSI
+## Features 
 
-## Ultimate goals:
-The activities that the functional app will be able to perform include proposing events, assigning
-tasks, maintaining drafts, summarising prior events, activity reports, and recording attendance.
+| Feature | Description |
+| :---: | --- |
+| `InstaFeed` | An API which helps to display all the images from official Instagram page of CSI to our webapp |
+| `Tables` | Dynamic and fetched from database (mysql) |
+| `Approval & Rejection` | The event proposals fetched from the database can be accepted/rejected which gets reflected and stored in the db |
+| `Feedback` | An Update can be given to the event proposals displayed |
+
+## Project Exclusions:
+This project is currently in the development phase for the core team members of CSI along with the concerned higher authorities.
+
+## Technology Used for:
+Frontend - HTML, CSS & JS
+<br>
+Backend - NodeJS 
+<br>
+Database - mysql (Stored in cloud AWS)
+<br>
+Deploy - Heroku
+
+## Developed By
+<a href=https://github.com/PurpleVen>Vendra Sekar</a>
+<a href=https://github.com/simarkaur28>Simar Kaur</a>
+<a href=https://github.com/Raviipandey>Ravi Pandey</a>
+
+
+
+
+
