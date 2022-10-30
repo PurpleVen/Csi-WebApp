@@ -5,24 +5,16 @@
    </p>
    <br>
    <p align="center">
-      <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards/stargazers">
-      <img alt="Stargazers" src="https://img.shields.io/github/stars/vn7n24fzkq/github-profile-summary-cards?style=for-the-badge&logo=github&color=f4dbd6&logoColor=D9E0EE&labelColor=302D41"></a>
-      <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards/releases/latest">
-      <img alt="Releases" src="https://img.shields.io/github/release/vn7n24fzkq/github-profile-summary-cards.svg?style=for-the-badge&logo=semantic-release&color=f5bde6&logoColor=D9E0EE&labelColor=302D41"/></a>
-      <a href="https://www.conventionalcommits.org/en/v1.0.0/">
-      <img alt="conventionalcommits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?style=for-the-badge&logo=conventionalcommits&color=ee99a0&logoColor=D9E0EE&labelColor=302D41"></a>
-      <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards/actions/workflows/github-action.yml">
-      <img alt="testandlint" src="https://img.shields.io/github/workflow/status/vn7n24fzkq/github-profile-summary-cards/Test%20and%20Lint?label=Test%20and%20Lint&style=for-the-badge&color=a6da95"></a>
+   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+   <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/>
+   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
+   <img src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+   <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
    </p>
-   
 </div>
-
-## Key Functionality
-This project manages a task catalogue and offers “Efficient Scheduling” for CSI
-
-## Ultimate goals:
-The activities that the functional app will be able to perform include proposing events, assigning
-tasks, maintaining drafts, summarising prior events, activity reports, and recording attendance.
 
 ---
 
@@ -53,3 +45,11 @@ high-quality software at speed with Foresight.
 
 
 ---
+
+
+## Key Functionality
+This project manages a task catalogue and offers “Efficient Scheduling” for CSI
+
+## Ultimate goals:
+The activities that the functional app will be able to perform include proposing events, assigning
+tasks, maintaining drafts, summarising prior events, activity reports, and recording attendance.
