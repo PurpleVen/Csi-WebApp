@@ -73,7 +73,9 @@ Deploy - Heroku
 
 ## Developed By
 <a href=https://github.com/PurpleVen>Vendra Sekar</a>
+<br>
 <a href=https://github.com/simarkaur28>Simar Kaur</a>
+<br>
 <a href=https://github.com/Raviipandey>Ravi Pandey</a>
 
 
