@@ -78,6 +78,7 @@ Backend - NodeJS
 Database - mysql (Stored in cloud AWS)
 <br>
 Deploy - Heroku
+
 ---
 
 ## Developed By:
