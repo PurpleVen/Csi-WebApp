@@ -10,8 +10,10 @@
    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/>
-   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
-   <img src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/><br>
+   <h3>Cloud Database</h3>
+   <img src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/><br>
+   <h3>Deploy</h3>
    <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
    </p>
 </div>
@@ -71,14 +73,6 @@ Database - mysql (Stored in cloud AWS)
 <br>
 Deploy - Heroku
 
-## Developed By
-<a href=https://github.com/PurpleVen>Vendra Sekar</a>
-<br>
-<a href=https://github.com/simarkaur28>Simar Kaur</a>
-<br>
-<a href=https://github.com/Raviipandey>Ravi Pandey</a>
-
-
-
+<!--Put developed by here-->
 
 
