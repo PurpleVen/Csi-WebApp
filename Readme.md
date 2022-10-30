@@ -26,9 +26,9 @@
 <tr>
 <td>
   <img width="100%" height="0">
-  <a href="https://www.runforesight.com/?utm_source=github-profile-summary-cards&utm_medium=sponsorship">
+  <a href="https://csi-management-webapp.herokuapp.com/">
   <img src="https://user-images.githubusercontent.com/86104620/198870235-e618e1dd-e6e9-4fdb-a47c-854ba49ad4ab.png"
-alt="Foresight" width="40%" align="right">
+alt="CSI" width="40%" align="right">
   </a>
  
   <p width="60%">
@@ -78,9 +78,13 @@ Backend - NodeJS
 Database - mysql (Stored in cloud AWS)
 <br>
 Deploy - Heroku
-
 ---
 
-<!--Put developed by here-->
+## Developed By:
+<a href=https://github.com/PurpleVen>Vendra Sekar</a>
+<br>
+<a href=https://github.com/simarkaur28>Simar Kaur</a>
+<br>
+<a href=https://github.com/Raviipandey>Ravi Pandey</a>
 
 
