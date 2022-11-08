@@ -54,7 +54,7 @@ const connection = mysql.createConnection({
     // user: "root",
     // password: "",
     // database: "csiApp"
-    host: "15.207.106.198",
+    host: "65.0.4.102",
     user: "csi",
     password: "csi",
     database: "csiApp"

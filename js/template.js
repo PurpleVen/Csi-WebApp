@@ -147,22 +147,3 @@
   });
   
 })(jQuery);
-
-
-
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ["COMPS" , "IT" , "EXTC" , "MECH"],
-    datasets: [{
-      backgroundColor: [
-        "Blue",
-        "Red",
-        "Yellow",
-        "Green"
-      ],
-      data: [38 , 10 , 8 , 2]
-    }]
-  }
-});
