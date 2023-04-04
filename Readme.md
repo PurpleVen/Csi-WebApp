@@ -1,7 +1,7 @@
 <div align="center">
    <h1>CSI MANAGEMENT WEB APP</h1>
    <p>
-      A dashboard developed for the higher authorities of the IT department student chapter (CSI) in DBIT which displays the information, requirements and overall functioning of the mentioned chapter.<br><br> An Admin Dashobard for <a href=https://github.com/CSI-DBIT/CSI-ManagementSystem>CSI Management System Mobile App</a>
+      A dashboard developed for the higher authorities of the IT department student chapter (CSI) in DBIT which displays the information, requirements and overall functioning of the mentioned chapter.<br><br> An Admin Dashobard for <a href=https://github.com/Raviipandey/CSI-Management-App>CSI Management System Mobile App</a>
    </p>
    <h3>Built With</h3>
    <p align="center">
